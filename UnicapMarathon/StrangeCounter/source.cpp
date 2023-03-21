@@ -3,21 +3,19 @@ using namespace std;
 long n;
 int main() {
     cin >> n;
-    long init = 1;
+    long time = 1;
     long value = 3;
     long pgFactor = 3;
-    while(init <= n) {
+    while(time <= n) {
         value *= 2;
-        init += pgFactor;
+        time += pgFactor;
         pgFactor *= 2;
     }
-    if(init == n) {
+    if(time == n) {
         cout << value << endl;
     } else {
-        init -= 2;
-        init /= 2;
-        value /= 2;
-        value -= (n-init);
+        time = (time-2)/2;
+        value = (value/2)-(n-time);
         cout << value << endl;
     }
     return 0;
